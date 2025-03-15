@@ -1,5 +1,5 @@
 import Header from "../components/Header/Header";
-import InputValue from "../components/InputValue";
+import InputValue from "../components/InputValue/InputValue";
 
 export default function TipCalculatorPage() {
   return (
