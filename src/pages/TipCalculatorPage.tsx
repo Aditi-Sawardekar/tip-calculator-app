@@ -1,9 +1,10 @@
+import Header from "../components/Header";
 import InputValue from "../components/InputValue";
 
 export default function TipCalculatorPage() {
   return (
     <main>
-      <h1>SPLITTER</h1>
+      <Header title="SPLITTER" />
       <section>
         <InputValue
           id="amount"
@@ -36,6 +37,7 @@ export default function TipCalculatorPage() {
             custom
           </button>
         </fieldset>
+
         <InputValue
           id="person"
           label="Number of People"
