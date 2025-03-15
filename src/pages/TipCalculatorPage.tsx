@@ -1,10 +1,11 @@
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 import InputValue from "../components/InputValue";
 
 export default function TipCalculatorPage() {
   return (
     <main>
       <Header title="SPLITTER" />
+
       <section>
         <InputValue
           id="amount"
