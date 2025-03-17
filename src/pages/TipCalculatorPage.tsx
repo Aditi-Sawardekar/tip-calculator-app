@@ -1,3 +1,4 @@
+import DisplayCalculation from "../components/DisplayCalculation/DisplayCalculation";
 import Header from "../components/Header/Header";
 import InputValue from "../components/InputValue/InputValue";
 import PercentageButtons from "../components/PercentageButtons/PercentageButtons";
@@ -30,14 +31,7 @@ export default function TipCalculatorPage() {
           }}
         />
 
-        <section>
-          <h5>
-            Tip Amount /<span>per person</span> : ${4.27}
-          </h5>
-          <h5>
-            Total /<span>per person</span> : ${32.79}
-          </h5>
-        </section>
+        <DisplayCalculation onClick={() => console.log("Reset")} />
       </section>
     </main>
   );
