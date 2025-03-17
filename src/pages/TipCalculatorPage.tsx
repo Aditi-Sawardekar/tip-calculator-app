@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import InputValue from "../components/InputValue/InputValue";
+import PercentageButtons from "../components/PercentageButtons/PercentageButtons";
 
 export default function TipCalculatorPage() {
   return (
@@ -17,27 +18,7 @@ export default function TipCalculatorPage() {
           }}
         />
 
-        <fieldset>
-          <legend>Select Tip %</legend>
-          <button type="button" onClick={() => console.log("5%")}>
-            5%
-          </button>
-          <button type="button" onClick={() => console.log("10%")}>
-            10%
-          </button>
-          <button type="button" onClick={() => console.log("15%")}>
-            15%
-          </button>
-          <button type="button" onClick={() => console.log("25%")}>
-            25%
-          </button>
-          <button type="button" onClick={() => console.log("50%")}>
-            50%
-          </button>
-          <button type="button" onClick={() => console.log("Custom")}>
-            custom
-          </button>
-        </fieldset>
+        <PercentageButtons onClick={(percentage) => console.log(percentage)} />
 
         <InputValue
           id="person"
