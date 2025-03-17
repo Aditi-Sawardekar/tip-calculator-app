@@ -1,9 +1,14 @@
+import { useState } from "react";
+
 import DisplayCalculation from "../components/DisplayCalculation/DisplayCalculation";
 import Header from "../components/Header/Header";
 import InputValue from "../components/InputValue/InputValue";
 import PercentageButtons from "../components/PercentageButtons/PercentageButtons";
 
 export default function TipCalculatorPage() {
+  const [billAmount, setBillAmount] = useState<number | null>(null);
+  const [numberOfPeople, setNumberOfPeople] = useState<number | null>(null);
+
   return (
     <main>
       <Header title="SPLITTER" />
@@ -13,9 +18,11 @@ export default function TipCalculatorPage() {
           id="amount"
           label="Bill"
           type="number"
-          value={142.55}
+          value={billAmount}
           onChange={(event) => {
-            console.log(event.target.value);
+            setBillAmount(
+              event.target.value === "" ? null : Number(event.target.value)
+            );
           }}
         />
 
@@ -25,9 +32,11 @@ export default function TipCalculatorPage() {
           id="person"
           label="Number of People"
           type="number"
-          value={5}
+          value={numberOfPeople}
           onChange={(event) => {
-            console.log(event.target.value);
+            setNumberOfPeople(
+              event.target.value === "" ? null : Number(event.target.value)
+            );
           }}
         />
 
