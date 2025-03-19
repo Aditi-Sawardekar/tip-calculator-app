@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import DisplayCalculation from "../components/DisplayCalculation/DisplayCalculation";
 import Header from "../components/Header/Header";
@@ -10,6 +10,7 @@ export default function TipCalculatorPage() {
   const [numberOfPeople, setNumberOfPeople] = useState<number | null>(null);
 
   const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
+  const [totalPerPerson, setTotalPerPerson] = useState(0);
 
   function handleCalculateTipAmount(percentage: number) {
     if (billAmount === null || numberOfPeople === null) {
@@ -21,6 +22,13 @@ export default function TipCalculatorPage() {
       (billAmount * (percentage / 100)) / numberOfPeople;
     setTipAmountPerPerson(calculatedTipPerPerson);
   }
+
+  useEffect(() => {
+    if (billAmount != null && numberOfPeople != null) {
+      const totalAmount = billAmount / numberOfPeople + tipAmountPerPerson;
+      setTotalPerPerson(totalAmount);
+    }
+  }, [tipAmountPerPerson]);
 
   return (
     <main>
@@ -55,6 +63,7 @@ export default function TipCalculatorPage() {
 
         <DisplayCalculation
           tipAmountPerPerson={tipAmountPerPerson}
+          totalPerPerson={totalPerPerson}
           onClick={() => console.log("Reset")}
         />
       </section>
