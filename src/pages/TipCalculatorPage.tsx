@@ -1,59 +1,78 @@
-import InputValue from "../components/InputValue";
+import { useState, useEffect } from "react";
+
+import DisplayCalculation from "../components/DisplayCalculation/DisplayCalculation";
+import Header from "../components/Header/Header";
+import InputValue from "../components/InputValue/InputValue";
+import PercentageButtons from "../components/PercentageButtons/PercentageButtons";
 
 export default function TipCalculatorPage() {
+  const [billAmount, setBillAmount] = useState<number | null>(null);
+  const [numberOfPeople, setNumberOfPeople] = useState<number | null>(null);
+
+  const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
+  const [totalPerPerson, setTotalPerPerson] = useState(0);
+
+  function handleCalculateTipAmount(percentage: number) {
+    if (billAmount === null || numberOfPeople === null) {
+      console.log("Invalid input");
+      return;
+    }
+
+    const calculatedTipPerPerson =
+      (billAmount * (percentage / 100)) / numberOfPeople;
+    setTipAmountPerPerson(calculatedTipPerPerson);
+  }
+
+  function handleReset() {
+    setBillAmount(null);
+    setNumberOfPeople(null);
+    setTipAmountPerPerson(0);
+    setTotalPerPerson(0);
+  }
+
+  useEffect(() => {
+    if (billAmount != null && numberOfPeople != null) {
+      const totalAmount = billAmount / numberOfPeople + tipAmountPerPerson;
+      setTotalPerPerson(totalAmount);
+    }
+  }, [tipAmountPerPerson]);
+
   return (
     <main>
-      <h1>SPLITTER</h1>
+      <Header title="SPLITTER" />
+
       <section>
         <InputValue
           id="amount"
           label="Bill"
           type="number"
-          value={142.55}
+          value={billAmount}
           onChange={(event) => {
-            console.log(event.target.value);
+            setBillAmount(
+              event.target.value === "" ? null : Number(event.target.value)
+            );
           }}
         />
 
-        <fieldset>
-          <legend>Select Tip %</legend>
-          <button type="button" onClick={() => console.log("5%")}>
-            5%
-          </button>
-          <button type="button" onClick={() => console.log("10%")}>
-            10%
-          </button>
-          <button type="button" onClick={() => console.log("15%")}>
-            15%
-          </button>
-          <button type="button" onClick={() => console.log("25%")}>
-            25%
-          </button>
-          <button type="button" onClick={() => console.log("50%")}>
-            50%
-          </button>
-          <button type="button" onClick={() => console.log("Custom")}>
-            custom
-          </button>
-        </fieldset>
+        <PercentageButtons onClick={handleCalculateTipAmount} />
+
         <InputValue
           id="person"
           label="Number of People"
           type="number"
-          value={5}
+          value={numberOfPeople}
           onChange={(event) => {
-            console.log(event.target.value);
+            setNumberOfPeople(
+              event.target.value === "" ? null : Number(event.target.value)
+            );
           }}
         />
 
-        <section>
-          <h5>
-            Tip Amount /<span>per person</span> : ${4.27}
-          </h5>
-          <h5>
-            Total /<span>per person</span> : ${32.79}
-          </h5>
-        </section>
+        <DisplayCalculation
+          tipAmountPerPerson={tipAmountPerPerson}
+          totalPerPerson={totalPerPerson}
+          onClick={handleReset}
+        />
       </section>
     </main>
   );
