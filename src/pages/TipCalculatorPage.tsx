@@ -9,6 +9,17 @@ export default function TipCalculatorPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
   const [numberOfPeople, setNumberOfPeople] = useState<number | null>(null);
 
+  function handleCalculateTipAmount(percentage: number) {
+    if (billAmount === null || numberOfPeople === null) {
+      console.log("Invalid input");
+      return;
+    }
+
+    const tipAmountPerPerson =
+      (billAmount * (percentage / 100)) / numberOfPeople;
+    console.log(tipAmountPerPerson);
+  }
+
   return (
     <main>
       <Header title="SPLITTER" />
@@ -26,7 +37,7 @@ export default function TipCalculatorPage() {
           }}
         />
 
-        <PercentageButtons onClick={(percentage) => console.log(percentage)} />
+        <PercentageButtons onClick={handleCalculateTipAmount} />
 
         <InputValue
           id="person"
