@@ -23,6 +23,13 @@ export default function TipCalculatorPage() {
     setTipAmountPerPerson(calculatedTipPerPerson);
   }
 
+  function handleReset() {
+    setBillAmount(null);
+    setNumberOfPeople(null);
+    setTipAmountPerPerson(0);
+    setTotalPerPerson(0);
+  }
+
   useEffect(() => {
     if (billAmount != null && numberOfPeople != null) {
       const totalAmount = billAmount / numberOfPeople + tipAmountPerPerson;
@@ -64,7 +71,7 @@ export default function TipCalculatorPage() {
         <DisplayCalculation
           tipAmountPerPerson={tipAmountPerPerson}
           totalPerPerson={totalPerPerson}
-          onClick={() => console.log("Reset")}
+          onClick={handleReset}
         />
       </section>
     </main>
