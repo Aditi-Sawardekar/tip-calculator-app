@@ -9,15 +9,17 @@ export default function TipCalculatorPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
   const [numberOfPeople, setNumberOfPeople] = useState<number | null>(null);
 
+  const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
+
   function handleCalculateTipAmount(percentage: number) {
     if (billAmount === null || numberOfPeople === null) {
       console.log("Invalid input");
       return;
     }
 
-    const tipAmountPerPerson =
+    const calculatedTipPerPerson =
       (billAmount * (percentage / 100)) / numberOfPeople;
-    console.log(tipAmountPerPerson);
+    setTipAmountPerPerson(calculatedTipPerPerson);
   }
 
   return (
@@ -51,7 +53,10 @@ export default function TipCalculatorPage() {
           }}
         />
 
-        <DisplayCalculation onClick={() => console.log("Reset")} />
+        <DisplayCalculation
+          tipAmountPerPerson={tipAmountPerPerson}
+          onClick={() => console.log("Reset")}
+        />
       </section>
     </main>
   );

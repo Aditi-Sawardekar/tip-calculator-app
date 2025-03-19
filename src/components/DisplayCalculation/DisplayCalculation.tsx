@@ -2,10 +2,12 @@ import AmountDisplay from "../AmountDisplay/AmountDisplay";
 import AppButton from "../AppButton/AppButton";
 
 interface DisplayCalculationProps {
+  tipAmountPerPerson: number;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export default function DisplayCalculation({
+  tipAmountPerPerson,
   onClick,
 }: DisplayCalculationProps) {
   return (
@@ -14,7 +16,7 @@ export default function DisplayCalculation({
         label="Tip Amount"
         unit="person"
         currency="$"
-        amount={4.27}
+        amount={Number(tipAmountPerPerson.toFixed(2))}
       />
 
       <AmountDisplay label="Total" unit="person" currency="$" amount={32.79} />
