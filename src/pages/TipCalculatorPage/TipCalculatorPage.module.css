@@ -1,0 +1,10 @@
+.mainContainer {
+  background-color: hsl(185, 41%, 84%);
+}
+
+.tipCalculatorContainer {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 25px 25px 0 0;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+}

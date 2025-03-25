@@ -5,6 +5,8 @@ import Header from "../../components/Header/Header";
 import InputValue from "../../components/InputValue/InputValue";
 import PercentageButtons from "../../components/PercentageButtons/PercentageButtons";
 
+import styles from "./TipCalculatorPage.module.css";
+
 export default function TipCalculatorPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
   const [numberOfPeople, setNumberOfPeople] = useState<number | null>(null);
@@ -38,10 +40,10 @@ export default function TipCalculatorPage() {
   }, [tipAmountPerPerson]);
 
   return (
-    <main>
+    <main className={styles.mainContainer}>
       <Header title="SPLITTER" />
 
-      <section>
+      <section className={styles.tipCalculatorContainer}>
         <InputValue
           id="amount"
           label="Bill"
