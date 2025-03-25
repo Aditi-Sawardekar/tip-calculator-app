@@ -1,4 +1,4 @@
-import TipCalculatorPage from "./pages/TipCalculatorPage";
+import TipCalculatorPage from "./pages/TipCalculatorPage/TipCalculatorPage";
 
 function App() {
   return (

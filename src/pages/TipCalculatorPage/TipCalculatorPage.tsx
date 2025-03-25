@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-import DisplayCalculation from "../components/DisplayCalculation/DisplayCalculation";
-import Header from "../components/Header/Header";
-import InputValue from "../components/InputValue/InputValue";
-import PercentageButtons from "../components/PercentageButtons/PercentageButtons";
+import DisplayCalculation from "../../components/DisplayCalculation/DisplayCalculation";
+import Header from "../../components/Header/Header";
+import InputValue from "../../components/InputValue/InputValue";
+import PercentageButtons from "../../components/PercentageButtons/PercentageButtons";
 
 export default function TipCalculatorPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
