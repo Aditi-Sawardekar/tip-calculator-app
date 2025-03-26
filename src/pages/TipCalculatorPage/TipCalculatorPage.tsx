@@ -48,6 +48,7 @@ export default function TipCalculatorPage() {
           id="amount"
           label="Bill"
           type="number"
+          currency="$"
           value={billAmount}
           onChange={(event) => {
             setBillAmount(
