@@ -2,7 +2,7 @@ interface InputValueProps {
   id: string;
   label: string;
   type: string;
-  currency?: string;
+  icon?: React.ReactNode;
   value: number | null;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -11,7 +11,7 @@ export default function InputValue({
   id,
   label,
   type,
-  currency = " ",
+  icon = " ",
   value,
   onChange,
 }: InputValueProps) {
@@ -19,7 +19,7 @@ export default function InputValue({
     <div>
       <label htmlFor={id}>{label}</label>
       <div>
-        {value !== null ? currency : " "}
+        {value !== null ? icon : " "}
         <input id={id} type={type} value={value ?? ""} onChange={onChange} />
       </div>
     </div>
