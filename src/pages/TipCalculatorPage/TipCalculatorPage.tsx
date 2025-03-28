@@ -5,6 +5,9 @@ import Header from "../../components/Header/Header";
 import InputValue from "../../components/InputValue/InputValue";
 import PercentageButtons from "../../components/PercentageButtons/PercentageButtons";
 
+import DollarIcon from "../../assets/icons/icon-dollar.svg";
+import PersonIcon from "../../assets/icons/icon-person.svg";
+
 import styles from "./TipCalculatorPage.module.css";
 
 export default function TipCalculatorPage() {
@@ -48,7 +51,7 @@ export default function TipCalculatorPage() {
           id="amount"
           label="Bill"
           type="number"
-          currency="$"
+          icon={<img src={DollarIcon} alt="Dollar Icon" />}
           value={billAmount}
           onChange={(event) => {
             setBillAmount(
@@ -63,6 +66,7 @@ export default function TipCalculatorPage() {
           id="person"
           label="Number of People"
           type="number"
+          icon={<img src={PersonIcon} alt="Person Icon" />}
           value={numberOfPeople}
           onChange={(event) => {
             setNumberOfPeople(
