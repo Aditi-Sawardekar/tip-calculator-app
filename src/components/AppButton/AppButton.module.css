@@ -22,3 +22,11 @@
 .primary:active {
   background-color: hsl(173, 61%, 77%);
 }
+
+.reset {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}

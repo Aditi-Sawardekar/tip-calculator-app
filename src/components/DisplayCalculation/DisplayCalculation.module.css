@@ -1,0 +1,8 @@
+.displayCalculationContainer {
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
