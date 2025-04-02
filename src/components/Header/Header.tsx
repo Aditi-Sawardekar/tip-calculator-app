@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 
 interface HeaderProps {
-  title: string;
+  title: React.ReactNode;
 }
 
 export default function Header({ title }: HeaderProps) {

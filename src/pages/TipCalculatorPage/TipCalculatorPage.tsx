@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import InputValue from "../../components/InputValue/InputValue";
 import PercentageButtons from "../../components/PercentageButtons/PercentageButtons";
 
+import logo from "../../assets/icons/logo.svg";
 import DollarIcon from "../../assets/icons/icon-dollar.svg";
 import PersonIcon from "../../assets/icons/icon-person.svg";
 
@@ -44,7 +45,9 @@ export default function TipCalculatorPage() {
 
   return (
     <main className={styles.mainContainer}>
-      <Header title="SPLITTER" />
+      <Header
+        title={<img src={logo} alt="Splitter - Tip Calculator app logo" />}
+      />
 
       <section className={styles.tipCalculatorContainer}>
         <InputValue
