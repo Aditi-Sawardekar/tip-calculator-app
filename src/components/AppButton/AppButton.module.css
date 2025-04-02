@@ -1,0 +1,24 @@
+.button {
+  outline: none;
+  border-radius: 5px;
+  width: 45%;
+  max-width: 47%;
+  font-size: 1.5rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.primary:hover {
+  background-color: hsl(172, 67%, 45%);
+}
+
+.primary:active {
+  background-color: hsl(173, 61%, 77%);
+}
