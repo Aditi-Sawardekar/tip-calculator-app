@@ -1,0 +1,12 @@
+.percentageButtonsContainer {
+  color: hsl(186, 14%, 43%);
+  border: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.percentageButtonsContainer legend {
+  margin-bottom: 1rem;
+}
