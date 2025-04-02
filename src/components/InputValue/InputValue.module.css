@@ -1,0 +1,37 @@
+.inputValueContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputValueContainer label {
+  color: hsl(186, 14%, 43%);
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(189, 47%, 97%);
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+}
+
+.inputWrapper:hover {
+  border: 2px solid hsl(172, 67%, 45%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.inputValueContainer input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: hsl(183, 100%, 15%);
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: right;
+  cursor: pointer;
+}

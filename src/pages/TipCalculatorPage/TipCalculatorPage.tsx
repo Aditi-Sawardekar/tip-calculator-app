@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 
-import DisplayCalculation from "../components/DisplayCalculation/DisplayCalculation";
-import Header from "../components/Header/Header";
-import InputValue from "../components/InputValue/InputValue";
-import PercentageButtons from "../components/PercentageButtons/PercentageButtons";
+import DisplayCalculation from "../../components/DisplayCalculation/DisplayCalculation";
+import Header from "../../components/Header/Header";
+import InputValue from "../../components/InputValue/InputValue";
+import PercentageButtons from "../../components/PercentageButtons/PercentageButtons";
+
+import logo from "../../assets/icons/logo.svg";
+import DollarIcon from "../../assets/icons/icon-dollar.svg";
+import PersonIcon from "../../assets/icons/icon-person.svg";
+
+import styles from "./TipCalculatorPage.module.css";
 
 export default function TipCalculatorPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
@@ -38,14 +44,17 @@ export default function TipCalculatorPage() {
   }, [tipAmountPerPerson]);
 
   return (
-    <main>
-      <Header title="SPLITTER" />
+    <main className={styles.mainContainer}>
+      <Header
+        title={<img src={logo} alt="Splitter - Tip Calculator app logo" />}
+      />
 
-      <section>
+      <section className={styles.tipCalculatorContainer}>
         <InputValue
           id="amount"
           label="Bill"
           type="number"
+          icon={<img src={DollarIcon} alt="Dollar Icon" />}
           value={billAmount}
           onChange={(event) => {
             setBillAmount(
@@ -60,6 +69,7 @@ export default function TipCalculatorPage() {
           id="person"
           label="Number of People"
           type="number"
+          icon={<img src={PersonIcon} alt="Person Icon" />}
           value={numberOfPeople}
           onChange={(event) => {
             setNumberOfPeople(

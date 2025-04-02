@@ -1,6 +1,8 @@
 import AmountDisplay from "../AmountDisplay/AmountDisplay";
 import AppButton from "../AppButton/AppButton";
 
+import styles from "./DisplayCalculation.module.css";
+
 interface DisplayCalculationProps {
   tipAmountPerPerson: number;
   totalPerPerson: number;
@@ -13,7 +15,7 @@ export default function DisplayCalculation({
   onClick,
 }: DisplayCalculationProps) {
   return (
-    <section>
+    <section className={styles.displayCalculationContainer}>
       <AmountDisplay
         label="Tip Amount"
         unit="person"
@@ -28,7 +30,12 @@ export default function DisplayCalculation({
         amount={Number(totalPerPerson.toFixed(2))}
       />
 
-      <AppButton type="reset" label="reset" onClick={onClick} />
+      <AppButton
+        type="reset"
+        className="reset"
+        label="reset"
+        onClick={onClick}
+      />
     </section>
   );
 }

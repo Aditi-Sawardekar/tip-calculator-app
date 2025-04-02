@@ -1,3 +1,5 @@
+import styles from "./AmountDisplay.module.css";
+
 interface AmountDisplayProps {
   label: string;
   unit: string;
@@ -12,12 +14,14 @@ export default function AmountDisplay({
   amount,
 }: AmountDisplayProps) {
   return (
-    <div>
-      <p>
-        {label} <span>/ {unit}</span>
+    <section className={styles.amountDisplayContainer}>
+      <p className={styles.amountLabel}>
+        {label} <span className={styles.amountUnit}>/ {unit}</span>
       </p>
-      <p>{currency} </p>
-      <strong>{amount}</strong>
-    </div>
+      <p className={styles.amount}>
+        {currency}
+        {amount}
+      </p>
+    </section>
   );
 }
