@@ -11,3 +11,17 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+@media (min-width: 768px) {
+  .mainContainer {
+    height: 100vh;
+  }
+
+  .tipCalculatorContainer {
+    min-width: 608px;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 5.14vh 9.8vw;
+    border-radius: 25px 25px 25px 25px;
+  }
+}

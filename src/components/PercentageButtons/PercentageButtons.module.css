@@ -10,3 +10,14 @@
 .percentageButtonsContainer legend {
   margin-bottom: 1rem;
 }
+
+@media (min-width: 768px) {
+  /* 
+  Adding a pseudo-element to maintain even spacing between buttons  
+  when there are fewer buttons in the last row.
+  */
+  .percentageButtonsContainer::after {
+    content: "";
+    flex-basis: 31%;
+  }
+}
