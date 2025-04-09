@@ -21,3 +21,10 @@
     flex-basis: 31%;
   }
 }
+
+@media (min-width: 1440px) {
+  .percentageButtonsContainer::after {
+    content: "";
+    flex-basis: 30.5%;
+  }
+}
