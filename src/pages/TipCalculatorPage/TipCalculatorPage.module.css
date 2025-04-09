@@ -1,5 +1,7 @@
 .mainContainer {
   background-color: hsl(185, 41%, 84%);
+  display: flex;
+  flex-direction: column;
 }
 
 .tipCalculatorContainer {
@@ -7,7 +9,55 @@
   border-radius: 25px 25px 0 0;
   overflow: hidden;
   padding: 2rem 1.5rem;
+}
+
+.tipCalculatorInputs {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .mainContainer {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tipCalculatorContainer {
+    min-width: 80%;
+    margin: 0 auto;
+    padding: 5.14vh 9.8vw;
+    border-radius: 25px 25px 25px 25px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mainContainer {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tipCalculatorContainer {
+    min-width: 920px;
+    max-width: 80%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tipCalculatorInputs {
+    width: 26.5vw;
+  }
+
+  .tipCalculatorResults {
+    width: 45%;
+    display: flex;
+  }
+
+  /* To make the child stretch to fill available space */
+  .tipCalculatorResults > * {
+    flex-grow: 1;
+  }
 }

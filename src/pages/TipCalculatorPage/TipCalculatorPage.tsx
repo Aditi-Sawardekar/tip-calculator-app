@@ -50,39 +50,43 @@ export default function TipCalculatorPage() {
       />
 
       <section className={styles.tipCalculatorContainer}>
-        <InputValue
-          id="amount"
-          label="Bill"
-          type="number"
-          icon={<img src={DollarIcon} alt="Dollar Icon" />}
-          value={billAmount}
-          onChange={(event) => {
-            setBillAmount(
-              event.target.value === "" ? null : Number(event.target.value)
-            );
-          }}
-        />
+        <div className={styles.tipCalculatorInputs}>
+          <InputValue
+            id="amount"
+            label="Bill"
+            type="number"
+            icon={<img src={DollarIcon} alt="Dollar Icon" />}
+            value={billAmount}
+            onChange={(event) => {
+              setBillAmount(
+                event.target.value === "" ? null : Number(event.target.value)
+              );
+            }}
+          />
 
-        <PercentageButtons onClick={handleCalculateTipAmount} />
+          <PercentageButtons onClick={handleCalculateTipAmount} />
 
-        <InputValue
-          id="person"
-          label="Number of People"
-          type="number"
-          icon={<img src={PersonIcon} alt="Person Icon" />}
-          value={numberOfPeople}
-          onChange={(event) => {
-            setNumberOfPeople(
-              event.target.value === "" ? null : Number(event.target.value)
-            );
-          }}
-        />
+          <InputValue
+            id="person"
+            label="Number of People"
+            type="number"
+            icon={<img src={PersonIcon} alt="Person Icon" />}
+            value={numberOfPeople}
+            onChange={(event) => {
+              setNumberOfPeople(
+                event.target.value === "" ? null : Number(event.target.value)
+              );
+            }}
+          />
+        </div>
 
-        <DisplayCalculation
-          tipAmountPerPerson={tipAmountPerPerson}
-          totalPerPerson={totalPerPerson}
-          onClick={handleReset}
-        />
+        <div className={styles.tipCalculatorResults}>
+          <DisplayCalculation
+            tipAmountPerPerson={tipAmountPerPerson}
+            totalPerPerson={totalPerPerson}
+            onClick={handleReset}
+          />
+        </div>
       </section>
     </main>
   );
